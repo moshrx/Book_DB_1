@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+</head>
+<body>
+    <h1>Book Details</h1>
+
+    {% if book_details %}
+        {% if book_details.get('works') %}
+            <ul>
+                {% for book in book_details.works %}
+                    <li>
+                        <h2>Title: {{ book.title }}</h2>
+
+                        {% if book.get('authors') %}
+                            <p>Author(s): {{ book.authors[0].name if book.authors else 'Unknown' }}</p>
+                        {% else %}
+                            <p>Author(s): Unknown</p>
+                        {% endif %}
+
+                        <p>Published in the year: {{ book.first_publish_year }}</p>
+                        <p>Subject: {{ book.subject }}</p>
+
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No books found for the given subject.</p>
+        {% endif %}
+    {% else %}
+        <p>No details available for the given subject.</p>
+    {% endif %}
+</body>
+</html>

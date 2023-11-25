@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment3</title>
+</head>
+<body>
+    <center><h1>Book Finder API</h1></center>
+    <form action="/bookDetails" method="POST">
+        <label for="subject">Select a Subject:</label>
+        <select id="subject" name="subject" required>
+            <option value="horror">Horror</option>
+            <option value="fiction">Fiction</option>
+            <option value="literature">Literature</option>
+            <option value="mystery">Mystery</option>
+            <option value="romance">Romance</option>
+            <option value="thriller">Thriller</option>
+            <option value="magic">Magic</option>
+            <option value="science_fiction">Science Fiction</option>
+
+        </select>
+        <input type="submit" value="Search" />
+    </form>
+</body>
+</html>
